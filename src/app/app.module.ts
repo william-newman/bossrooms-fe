@@ -13,6 +13,7 @@ import { PatchNotesComponent } from './components/welcome/versioning/patch-notes
 import { SidebarMenuComponent } from './components/maps/sidebar-menu/sidebar-menu.component';
 import { TokenComponent } from './components/maps/grid/token/token.component';
 import { TokenListComponent } from './components/maps/sidebar-menu/token-list/token-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TokenListComponent } from './components/maps/sidebar-menu/token-list/to
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

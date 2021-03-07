@@ -1,1 +1,60 @@
-<p>signup works!</p>
+<div class="container">
+  <div class="signup-card">
+    <form #signupForm="ngForm">
+      <h2 class="heading">Sign Up</h2>
+
+      <label for="email" class="label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-input"
+        [(ngModel)]="email"
+        maxlength="60"
+        placeholder="Please enter your email"
+        required
+      />
+      <label for="password" class="label">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-input"
+        [(ngModel)]="password"
+        placeholder="Choose a password"
+        required
+      />
+
+      <label for="displayName" class="label">
+        Display Name (3-12 characters, unique)
+      </label>
+      <input
+        type="text"
+        name="displayName"
+        class="form-input"
+        [(ngModel)]="displayName"
+        placeholder="Please choose a display name"
+        maxlength="12"
+        required
+      />
+
+      <button
+        [disabled]="!signupForm.form.valid"
+        type="submit"
+        (click)="validate()"
+        class="btn btn-signup"
+      >
+        Sign Up!
+      </button>
+      <br />
+      <br />
+      <br />
+    </form>
+  </div>
+  <div class="errors">
+    {{ errorMessage }}
+  </div>
+  <div class="footer">
+    <button type="button" class="btn btn-login" routerLink="/patch_notes">
+      What's new?
+    </button>
+  </div>
+</div>
