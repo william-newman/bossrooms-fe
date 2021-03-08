@@ -1,0 +1,47 @@
+.token-list-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  height: 8vh;
+  z-index: 2;
+}
+
+.tlist {
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  padding: 5%;
+  margin: auto;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 80%;
+}
+
+.t-icon {
+  cursor: help;
+  height: 80%;
+  stroke: rgb(0, 255, 115);
+}
+
+.t-icon:hover {
+  stroke: rgb(4, 122, 57);
+}
+
+.plus-icon {
+  height: 80%;
+  stroke: rgb(0, 255, 115);
+}
+
+.plus-icon:hover {
+  stroke: rgb(4, 122, 57);
+}
+
+.minus-icon {
+  height: 80%;
+  stroke: rgb(0, 255, 115);
+}
+
+.minus-icon:hover {
+  stroke: rgb(4, 122, 57);
+}

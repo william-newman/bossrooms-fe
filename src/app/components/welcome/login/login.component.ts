@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { MessagePipelineService } from 'src/app/services/message-pipeline.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   password: any;
   errorMessage: any;
 
-  constructor(private authService: AuthenticationService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private router: Router, private msgService: MessagePipelineService) { }
 
   ngOnInit(): void { }
 
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
       //   .then(() => this.router.navigate(['/chat']))
       //   .catch(err => (this.errorMessage = err.message));
     } else {
-      this.errorMessage = 'Fatal error';
+      this.msgService.addErrorMessage('Login service is greatly broken.');
     }
   }
 
