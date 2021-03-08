@@ -11,5 +11,4 @@ export class PatchNotesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

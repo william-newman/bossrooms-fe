@@ -1,0 +1,19 @@
+.auth-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-title {
+  text-align: center;
+  padding: 10px;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-size: 5rem;
+  letter-spacing: 30px;
+  font-variant: small-caps;
+  pointer-events: none;
+  user-select: none;
+}

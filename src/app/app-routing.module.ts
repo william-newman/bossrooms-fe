@@ -7,12 +7,10 @@ import { SignupComponent } from './components/welcome/signup/signup.component';
 import { PatchNotesComponent } from './components/welcome/versioning/patch-notes/patch-notes.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
-const WELCOME_URI = "welcome";
-const MAPS_URI = "maps";
-const LOGIN_URI = "login";
-const SIGNUP_URI = "signup";
-const PATCH_NOTES_URI = "patch_notes";
-const SETTINGS_URI = "settings";
+const WELCOME_URI = 'welcome';
+const MAPS_URI = 'maps';
+const SETTINGS_URI = 'settings';
+const PATCH_NOTES_URI = 'patch_notes';
 
 const routes: Routes = [
   { path: WELCOME_URI, component: WelcomeComponent },
@@ -22,22 +20,12 @@ const routes: Routes = [
     component: MapsComponent,
     // canActivate: [AuthorizationService]
   },
-  {
-    path: SIGNUP_URI,
-    component: SignupComponent,
-    // canActivate: [true]
-  },
-  {
-    path: LOGIN_URI,
-    component: LoginComponent,
-    // canActivate: [true]
-  },
-  { path: PATCH_NOTES_URI, component: PatchNotesComponent },
   // {
   //   path: SETTINGS_URI,
   //   component: ProfileSettingsComponent,
   //   canActivate: [AuthGuardService]
   // },
+  { path: PATCH_NOTES_URI, component: PatchNotesComponent },
   { path: '**', component: PageNotFoundComponent }];
 
 @NgModule({
