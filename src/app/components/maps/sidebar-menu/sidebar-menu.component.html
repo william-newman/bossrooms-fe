@@ -1,1 +1,151 @@
-<p>sidebar-menu works!</p>
+<div
+  class="sidebar-container"
+  [ngClass]="{ expanded: expanded, closed: !expanded }"
+  #sbar
+>
+  <div
+    class="slide-container"
+    [ngClass]="{ 'slide-expanded': expanded, 'slide-closed': !expanded }"
+    (click)="toggleRightBar()"
+  >
+    <div class="slide-button" *ngIf="expanded">
+      <img
+        src="../../../assets/icon-Left-Arrow.png"
+        alt="Left Arrow"
+        width="80%"
+        height="80%"
+      />
+    </div>
+    <div class="slide-button" *ngIf="!expanded">
+      <img
+        src="../../../assets/icon-Right-Arrow.png"
+        alt="Right Arrow"
+        width="80%"
+        height="80%"
+      />
+    </div>
+  </div>
+  Grid:
+  <div class="grid-maker">
+    <label for="gridx" class="grid-x"> # of Boxes Wide: </label>
+    <input
+      type="number"
+      name="gridx"
+      id="gridx"
+      min="1"
+      value="10"
+      [formControl]="gridX"
+    />
+    <br />
+    <label for="gridy" class="grid-y"> # of Boxes Tall: </label>
+    <input
+      type="number"
+      name="gridy"
+      id="gridy"
+      min="1"
+      value="10"
+      [formControl]="gridY"
+    />
+    <br />
+    <label for="gridbox-x" class="gridbox-width-label"> Gridbox Width </label>
+    <input
+      type="number"
+      name="gridbox-x"
+      id="gridbox-width"
+      min="1"
+      [formControl]="gridBoxWidth"
+    />
+    px
+    <br />
+    <label for="gridbox-y" class="gridbox-height-label"> Gridbox Height </label>
+    <input
+      type="number"
+      name="gridbox-y"
+      id="gridbox-height"
+      min="1"
+      [formControl]="gridBoxHeight"
+    />
+    px
+    <br />
+
+    <label for="gridbox-y" class="gridbox-height-label"> Gridline Color </label>
+    <div class="color-picker">
+      <input
+        type="color"
+        name="token-text-color"
+        id="token-text-color"
+        [formControl]="gridlineColor"
+      />
+    </div>
+    <input
+      type="range"
+      name="gridline-opacity"
+      id="gridline-opacity"
+      min="0"
+      max="1"
+      step=".1"
+      [formControl]="gridlineOpacity"
+    />
+    <div class="gridline-opacity-output">
+      Gridline Opacity:
+      {{ gridlineOpacity.value }}
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="image-uploader">
+    Background:
+    <input
+      type="file"
+      name="img-up"
+      id="img-up"
+      accept="image/*"
+      (change)="onFileSelect($event)"
+      #fileInput
+    />
+    <button
+      type="button"
+      (click)="fileInput.click()"
+      id="select-btn"
+      class="select-btn btn"
+    >
+      Select Image
+    </button>
+    <label for="select-btn">(.jpg, .png, .gif supported)</label>
+    <br />
+    <br />
+    <div class="list-container">
+      <!-- Image
+      <div class="list-scroller">
+        <ul class="image-list">
+          <li>
+            <div class="image-name">Name:</div>
+            <div class="image-size">Size: KB</div>
+          </li>
+        </ul>
+      </div> -->
+      <br />
+      <div class="warning-unsupported">{{ errMsg }}</div>
+      <br />
+      <button class="upload-btn btn" (click)="applyImage()">
+        Upload Image
+      </button>
+    </div>
+    <!-- needs work -->
+    <div class="token-editor" *ngIf="false">
+      <select name="token-selector" id="token-selector">
+        <option *ngFor="let token of tokens" value="0">
+          {{ token }}
+        </option>
+      </select>
+    </div>
+    <!-- end bad stuff -->
+    <input type="button" value="Make Grid!" (click)="adjustGrid()" />
+  </div>
+</div>
+<div
+  class="sidebar-toggle-click-catcher"
+  (click)="closeSidebar()"
+  *ngIf="expanded"
+></div>

@@ -1,0 +1,85 @@
+@media (min-width: 800px) {
+  .sidebar-container {
+    height: 100vh;
+    background-color: rgba(245, 222, 179, 0.5);
+    // animation: 'sidebar-slide' 3s linear 0 1 alternate;
+    z-index: 8;
+  }
+
+  .expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    z-index: 8;
+  }
+
+  .closed {
+    position: fixed;
+    top: 0;
+    left: -25vw;
+    width: 0;
+    z-index: 8;
+  }
+
+  .slide-container {
+    position: fixed;
+    left: 0vw;
+    top: 5%;
+    width: 3vw;
+    min-height: 3vh;
+    z-index: 8;
+    background-color: rgba(245, 222, 179, 0.5);
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    padding: 1%;
+    margin: auto;
+  }
+
+  .slide-container:hover {
+    background-color: rgba(207, 187, 150, 0.5);
+  }
+
+  .slide-container:active {
+    background-color: rgba(245, 222, 179, 0.3);
+    box-shadow: 0 5px rgba(102, 102, 102, 0.1);
+    transform: translateX(2px);
+  }
+
+  .slide-expanded {
+    left: 25vw;
+  }
+
+  .slide-closed {
+    left: 0;
+  }
+  .slide-button {
+    margin: auto;
+  }
+
+  .sidebar-toggle-click-catcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: 1;
+  }
+
+  .shello {
+    padding: 25% 25%;
+  }
+
+  @keyframes sidebar-slide {
+    from {
+      left: 0;
+      border: solid 10px pink;
+    }
+    to {
+      left: -25vw;
+      border: dashed 14px yellow;
+    }
+  }
+}

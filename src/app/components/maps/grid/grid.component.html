@@ -1,1 +1,13 @@
-<p>grid works!</p>
+<div class="grid-container">
+  <table id="grid" [ngStyle]="gridStyle">
+    <tr class="gridbox-draw" *ngFor="let row of gridYArr">
+      <td class="gridbox-draw" *ngFor="let col of gridXArr">
+        <svg class="gridbox-draw" [ngStyle]="gridBoxSizePixels">
+          <rect [ngStyle]="gridBoxStyle" />
+        </svg>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<app-token></app-token>

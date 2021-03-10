@@ -1,1 +1,23 @@
-<p>token works!</p>
+<div class="token-container" *ngFor="let token of tokens; index as i">
+  <div
+    class="token"
+    ngDraggable
+    [handle]="dragHandle"
+    [position]="{ x: token.xOffset, y: token.yOffset }"
+    [ngStyle]="tokenDiv"
+    [bounds]="tokenBoundary"
+    [inBounds]="true"
+    [gridSize]="gridSize"
+    (endOffset)="onMoveEnd($event, token.id)"
+  >
+    <svg class="token-graphic" viewBox="0 0 100 100" [ngStyle]="tokenGraphic">
+      <circle cx="50" cy="50" r="45" stroke-width="7.5"></circle>
+    </svg>
+    <div class="token-label" [ngStyle]="tokenLabel">
+      {{ token.name }}
+    </div>
+    <div class="token-handle" #dragHandle></div>
+  </div>
+</div>
+
+<div class="token-boundaries" #tokenBoundary [ngStyle]="boundaryStyle"></div>

@@ -13,7 +13,8 @@ import { PatchNotesComponent } from './components/welcome/versioning/patch-notes
 import { SidebarMenuComponent } from './components/maps/sidebar-menu/sidebar-menu.component';
 import { TokenComponent } from './components/maps/grid/token/token.component';
 import { TokenListComponent } from './components/maps/sidebar-menu/token-list/token-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    AngularDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
